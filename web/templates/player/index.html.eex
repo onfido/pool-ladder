@@ -1,0 +1,40 @@
+<h2>Listing players</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Nickname</th>
+      <th>Email</th>
+      <th>Wins</th>
+      <th>Losses</th>
+      <th>Challenged</th>
+      <th>Challenger</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for player <- @players do %>
+    <tr>
+      <td><%= player.first_name %></td>
+      <td><%= player.last_name %></td>
+      <td><%= player.nickname %></td>
+      <td><%= player.email %></td>
+      <td><%= player.wins %></td>
+      <td><%= player.losses %></td>
+      <td><%= player.challenged %></td>
+      <td><%= player.challenger %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: player_path(@conn, :show, player), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: player_path(@conn, :edit, player), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: player_path(@conn, :delete, player), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New player", to: player_path(@conn, :new) %>
