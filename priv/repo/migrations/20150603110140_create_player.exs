@@ -7,10 +7,10 @@ defmodule PoolLadder.Repo.Migrations.CreatePlayer do
       add :last_name, :string
       add :nickname, :string
       add :email, :string
-      add :wins, :integer
-      add :losses, :integer
-      add :challenged, :integer
-      add :challenger, :integer
+      add :wins, :integer, default: 0
+      add :losses, :integer, default: 0
+      add :challenged, :integer, default: 0
+      add :challenger, :integer, default: 0
 
       timestamps
     end
