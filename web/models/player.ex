@@ -6,16 +6,16 @@ defmodule PoolLadder.Player do
     field :last_name, :string
     field :nickname, :string
     field :email, :string
-    field :wins, :integer
-    field :losses, :integer
-    field :challenged, :integer
-    field :challenger, :integer
+    field :wins, :integer, default: 0
+    field :losses, :integer, default: 0
+    field :challenged, :integer, default: 0
+    field :challenger, :integer, default: 0
 
     timestamps
   end
 
-  @required_fields ~w(first_name last_name nickname email wins losses challenged challenger)
-  @optional_fields ~w()
+  @required_fields ~w(first_name last_name email wins losses challenged challenger)
+  @optional_fields ~w(nickname)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
