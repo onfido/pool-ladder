@@ -1,7 +1,6 @@
 defmodule PoolLadder.ExampleViewsSpec do
 
   use ESpec.Phoenix, view: PoolLadder.PlayerView
-  alias PoolLadder.Player
 
     let :players do
       [

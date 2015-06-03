@@ -3,6 +3,7 @@ defmodule ESpec.Phoenix.Extend do
   def model do
     quote do
       alias PoolLadder.Repo
+      alias PoolLadder.Player
     end
   end
 
@@ -10,6 +11,7 @@ defmodule ESpec.Phoenix.Extend do
     quote do
       alias PoolLadder.Repo
       import PoolLadder.Router.Helpers
+      alias PoolLadder.Player
     end
   end
 
@@ -17,6 +19,7 @@ defmodule ESpec.Phoenix.Extend do
     quote do
       alias PoolLadder.Repo
       import PoolLadder.Router.Helpers
+      alias PoolLadder.Player
     end
   end
 
@@ -29,6 +32,7 @@ defmodule ESpec.Phoenix.Extend do
   def view do
     quote do
       import PoolLadder.Router.Helpers
+      alias PoolLadder.Player
     end
   end
 

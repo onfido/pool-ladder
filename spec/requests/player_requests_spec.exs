@@ -1,7 +1,6 @@
 defmodule PoolLadder.PostsRequestsSpec do
 
   use ESpec.Phoenix, request: PoolLadder.Endpoint
-  alias PoolLadder.Player
 
   before do
     player_one = %Player{first_name: "Player", last_name: "One", email: "one@demo.com"} |> PoolLadder.Repo.insert
@@ -13,6 +12,8 @@ defmodule PoolLadder.PostsRequestsSpec do
     subject! do: get(conn(), player_path(conn(), :index))
 
     it do: should be_success
+    it do: should use_view(PoolLadder.PlayerView)
+    it do: should render_template("index.html")
 
     context "body" do
       let :html, do: subject.resp_body

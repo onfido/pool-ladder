@@ -1,7 +1,6 @@
 defmodule PoolLadder.PlayerControllerSpec do
 
   use ESpec.Phoenix, controller: PoolLadder.PlayerController
-  alias PoolLadder.Player
 
   describe "index" do
     let :players do

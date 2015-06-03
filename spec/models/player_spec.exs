@@ -1,7 +1,6 @@
 defmodule PoolLadder.PlayerSpec do
 
   use ESpec.Phoenix, model: PoolLadder.Player
-  alias PoolLadder.Player
 
   let :valid_attributes do
     %{
@@ -16,13 +15,20 @@ defmodule PoolLadder.PlayerSpec do
   let :invalid_changeset, do: Player.changeset(%Player{}, invalid_attributes)
 
   describe "Models#Player" do
-    context "create" do
-      it "should create a model when passing valid attributes" do
+    context "valid attributes" do
+      it "should create a model instance" do
         expect(valid_changeset).to be_valid
       end
+    end
 
-      it "should not create a model when passing invalid attributes" do
+    context "invalid attributes" do
+      it "should not create a model instance" do
         expect(invalid_changeset).not_to be_valid
+      end
+
+      it "should have a list of errors" do
+        error_list = [first_name: "can't be blank", last_name: "can't be blank", email: "can't be blank"]
+        expect(invalid_changeset).to have_errors(error_list)
       end
     end
 

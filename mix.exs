@@ -34,7 +34,7 @@ defmodule PoolLadder.Mixfile do
       {:phoenix_html, "~> 1.0"},
       {:phoenix_live_reload, "~> 0.4", only: :dev},
       {:cowboy, "~> 1.0"},
-      {:espec_phoenix, "~> 0.1.0", only: :test, app: false},
+      {:espec_phoenix, github: "antonmi/espec_phoenix", only: :test, app: false},
       {:excoveralls, "~> 0.3.10", only: [:dev, :test]}
     ]
   end
