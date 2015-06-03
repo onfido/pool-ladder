@@ -1,11 +1,12 @@
+Code.require_file("spec/phoenix_helper.exs")
+
 ESpec.start
-	
+
 ESpec.configure fn(config) ->
 	config.before fn ->
-		{:ok, hello: :world}
-	end
-	
-	config.finally fn(__) -> 
-		__.hello
+	  Ecto.Adapters.SQL.restart_test_transaction(PoolLadder.Repo, [])
+  end
+
+	config.finally fn(__) ->
 	end
 end

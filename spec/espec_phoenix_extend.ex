@@ -22,7 +22,7 @@ defmodule ESpec.Phoenix.Extend do
 
   def router do
     quote do
-      
+
     end
   end
 
