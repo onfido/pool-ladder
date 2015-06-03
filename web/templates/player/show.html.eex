@@ -1,0 +1,47 @@
+<h2>Show player</h2>
+
+<ul>
+
+  <li>
+    <strong>FirstName:</strong>
+    <%= @player.first_name %>
+  </li>
+
+  <li>
+    <strong>LastName:</strong>
+    <%= @player.last_name %>
+  </li>
+
+  <li>
+    <strong>Nickname:</strong>
+    <%= @player.nickname %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @player.email %>
+  </li>
+
+  <li>
+    <strong>Wins:</strong>
+    <%= @player.wins %>
+  </li>
+
+  <li>
+    <strong>Losses:</strong>
+    <%= @player.losses %>
+  </li>
+
+  <li>
+    <strong>Challenged:</strong>
+    <%= @player.challenged %>
+  </li>
+
+  <li>
+    <strong>Challenger:</strong>
+    <%= @player.challenger %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: player_path(@conn, :index) %>
