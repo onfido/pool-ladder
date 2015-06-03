@@ -9,8 +9,8 @@ defmodule PoolLadder.PlayerSpec do
       last_name: "last name"
     }
   end
-
   let :invalid_attributes, do: %{}
+
   let :valid_changeset, do: Player.changeset(%Player{}, valid_attributes)
   let :invalid_changeset, do: Player.changeset(%Player{}, invalid_attributes)
 
