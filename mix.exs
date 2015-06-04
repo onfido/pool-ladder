@@ -17,9 +17,13 @@ defmodule PoolLadder.Mixfile do
   end
 
   def application do
-    [mod: {PoolLadder, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+    [
+      mod: {PoolLadder, []},
+      applications: [
+        :phoenix, :phoenix_html, :cowboy,
+        :logger, :phoenix_ecto, :postgrex
+        ]
+    ]
   end
 
   # Specifies which paths to compile per environment
